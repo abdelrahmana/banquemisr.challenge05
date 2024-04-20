@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:id="@+id/swipe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+        <com.google.android.material.card.MaterialCardView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/cardSearch"
+            android:layout_marginTop="15dp"
+            app:cardBackgroundColor="@color/white"
+            app:strokeWidth="1dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:strokeColor="@color/gray_new"
+            android:layout_width="match_parent"
+            android:minHeight="50dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/searchEditText"
+                android:background="@null"
+                android:layout_gravity="center"
+                android:paddingStart="8dp"
+                android:focusable="false"
+                android:paddingEnd="8dp"
+                android:gravity="center_vertical"
+                android:text= ""
+                android:textSize="14sp"
+                android:hint="@string/search_here"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.card.MaterialCardView>
+        <com.todkars.shimmer.ShimmerRecyclerView
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardSearch"
+            android:id="@+id/recycleTopFilter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <com.banquemisr.challenge05.util.NestedScrollPaginationView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/paginationScrolling"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycleTopFilter"
+        android:fillViewport="true"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:paddingBottom="10dp"
+            android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movieGridRecycle"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+</com.banquemisr.challenge05.util.NestedScrollPaginationView>
+        <com.wang.avi.AVLoadingIndicatorView
+            style="@style/AVLoadingIndicatorView.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/progress"
+            tools:visibility="visible"
+            app:indicatorColor="@color/black"
+            app:indicatorName="BallTrianglePathIndicator"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:visibility="gone"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="@string/no_result"
+            android:id="@+id/noResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

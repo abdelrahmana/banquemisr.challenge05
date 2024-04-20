@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="api_key" translatable="false">f03f5a763bef1453372728cf90975268</string>
+    <string name="error_happened">Error Happened .</string>
+    <string name="no_result">No Result Found .</string>
+    <string name="menu_nav">NavMovie</string>
+    <string name="search_here">search Here</string>
+    <string name="all">All</string>
+    <string name="production_companies">production_companies</string>
+    <string name="menu_nav_details">movie_details</string>
+    <string name="menu_nav_seach">Menu_search</string>
+</resources>
