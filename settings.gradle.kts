@@ -5,6 +5,8 @@ pluginManagement {
         gradlePluginPortal()
         jcenter()
         maven { setUrl("https://jitpack.io") }
+        maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
+
     }
 }
 dependencyResolutionManagement {
@@ -14,6 +16,8 @@ dependencyResolutionManagement {
         mavenCentral()
         jcenter()
         maven {setUrl("https://jitpack.io") }
+        maven { setUrl("https://maven.aliyun.com/repository/jcenter") }
+
     }
 }
 
